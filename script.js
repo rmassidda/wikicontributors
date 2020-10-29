@@ -175,8 +175,8 @@ async function update_state(e){
     }
 
     state[title] = edits
+    update_view(titles.filter(e=>state[e]!=undefined))
   }
-  update_view(titles)
 }
 
 // Event listeners
