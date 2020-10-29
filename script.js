@@ -1,5 +1,5 @@
 const encodeGetParams = p => Object.entries(p).map(kv => kv.map(encodeURIComponent).join("=")).join("&");
-const base_url = 'http://it.wikipedia.org/w/api.php?'
+const base_url = 'https://it.wikipedia.org/w/api.php?'
 const count_edits = (arr, val) => arr.reduce((a, v) => (v === val ? a + 1 : a), 0)
 
 // Global state
