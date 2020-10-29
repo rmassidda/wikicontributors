@@ -158,6 +158,8 @@ function update_view(titles){
 
 async function update_state(e){
   titles = document.getElementById("titles").value.split(",")
+  titles = titles.filter(e => e!="") // Remove empty
+  titles = titles.map(e => (e[0]==" ")?e.slice(1):e) // Remove starting space
   for (title of titles){
 
     // Check if the object has already been downloaded
