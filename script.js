@@ -58,7 +58,7 @@ async function retrieve_history(title) {
     }
 
     // Be nice!
-    await sleep(500)
+    await sleep(150)
   }
   return total
 }
@@ -156,6 +156,19 @@ function update_view(titles){
   }
 }
 
+function notify_loading(title){
+  // Select the table
+  thead = document.getElementById("table_header")
+
+  // Username
+  var node = document.createElement("th")
+  node["scope"] = "col"
+  node.innerHTML = `
+  <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+  <span class="sr-only">Loading...</span>`+title
+  thead.appendChild(node)
+}
+
 async function update_state(e){
   titles = document.getElementById("titles").value.split(",")
   titles = titles.filter(e => e!="") // Remove empty
@@ -168,6 +181,7 @@ async function update_state(e){
       continue;
     }
 
+    notify_loading(title)
     edits = await edits_per_user(title)
     console.log(title,"cached.")
 
