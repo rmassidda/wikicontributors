@@ -119,11 +119,20 @@ function update_view(titles){
     return titles.map(k => (state[k][u]!=undefined)?state[k][u]:0)
   }
 
-  // Sort users
+  // Prioritize users with multiple pages
+  let cnz = e => e.length - e.filter(a=>a!=0).length
+  let product = (a,b) => a*b
+  let notzero = (e) => e != 0
+  let nzp = e => agg(e).filter(notzero).reduce(product,1)
   users.sort((a,b) => {
-    let sum = (x,y) => x+y
-    return - (agg(a).reduce(sum,0) - agg(b).reduce(sum,0))
+    return (nzp(a)!=nzp(b)?nzp(b)-nzp(a):cnz(agg(a))-cnz(agg(b)))
   })
+
+  // Plain sum
+  // users.sort((a,b) => {
+  //   let sum = (x,y) => x+y
+  //   return - (agg(a).reduce(sum,0) - agg(b).reduce(sum,0))
+  // })
 
   // Insert data
   tbody = document.getElementById("table_body")
