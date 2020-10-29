@@ -146,6 +146,11 @@ function update_view(titles){
       row.appendChild(td)
     }
 
+    // Sum
+    td = document.createElement("td")
+    td.appendChild(document.createTextNode(agg(u).reduce((a,b)=>a+b,0)))
+    row.appendChild(td)
+
     // Append row
     tbody.appendChild(row)
   }
