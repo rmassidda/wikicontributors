@@ -27,7 +27,7 @@ async function retrieve_history(title) {
     origin: '*',
     titles: title
   }
-  
+
   // Multiple requests may be needed
   let stop = false
 
@@ -47,7 +47,7 @@ async function retrieve_history(title) {
     // Extract data and accumulate
     revs    = get_revisions(response)
     total   = total.concat(revs)
-    
+
     // Eventually do another call
     if (Object.keys(response).includes("continue")) {
       params["continue"]   = response["continue"]["continue"]
@@ -112,7 +112,6 @@ function update_view(titles){
   }
   users = new Set(users)
   users = Array.from(users)
-  console.log(users)
 
   // Aggregate
   let agg = u => {
@@ -187,19 +186,20 @@ async function update_state(e){
     // Check if the object has already been downloaded
     if (Object.keys(state).indexOf(title) > -1){
       console.log(title,"already cached.")
-      continue;
+    }
+    else{
+      notify_loading(title)
+      edits = await edits_per_user(title)
+      // Check if there is at least one result
+      if (Object.keys(edits).length == 0){
+        console.log(title,"no results.")
+      }
+      else{
+        state[title] = edits
+        console.log(title,"cached.")
+      }
     }
 
-    notify_loading(title)
-    edits = await edits_per_user(title)
-    console.log(title,"cached.")
-
-    // Check if there is at least one result
-    if (Object.keys(edits).length == 0){
-      continue;
-    }
-
-    state[title] = edits
     update_view(titles.filter(e=>state[e]!=undefined))
   }
 }
