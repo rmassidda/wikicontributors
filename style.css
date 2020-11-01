@@ -85,6 +85,10 @@ html {
         color: #007bff;
     }
 
+    .wk-search .input-group-append button:focus {
+        outline: none;
+    }
+
 /* DESCRIPTION COMPONENT*/
     .wk-description {
         width: 100%;
