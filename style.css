@@ -6,7 +6,7 @@ html {
     .wk-navbar {
         width: 100%;
         padding: 1rem;
-        background-color: #f8f8f8;
+        /* background-color: #f8f8f8; */
     }
 
     .wk-navbar .first-level div {
