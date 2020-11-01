@@ -2,30 +2,158 @@ html {
     font-size: 16px;
 }
 
-.wk-navbar {
-    width: 100%;
-    padding: 1rem;
-    background-color: #f8f8f8;
+/* NAVBAR COMPONENT*/
+    .wk-navbar {
+        width: 100%;
+        padding: 1rem;
+        background-color: #f8f8f8;
+    }
+
+    .wk-navbar .first-level div {
+        display: inline-block;
+    }
+
+    .wk-navbar .first-level div.right {
+        float: right;
+    }
+
+/* LOGO COMPONENT*/
+    .wk-logo {
+        text-align: center;
+        width: 100%;
+        margin: 10vh auto 0;
+    }
+
+/* SEARCH COMPONENT*/
+    .wk-search {
+        width: 100%;
+        padding: 1rem;
+        max-width: 40rem;
+        margin: 0 auto;
+    }
+
+    .wk-search-input {
+        height: 3rem;
+        line-height: 2rem;
+        padding: .5rem 5.5rem 0.5rem 3rem;
+        width: 100%;
+        border-radius: 1.5rem;
+        border: 1px solid #ddd;
+    }
+
+    .wk-search::after {
+        font-family: 'Material Icons';
+        content: "search";
+        -webkit-font-feature-settings: 'liga';
+        font-size: 1.5rem;
+        color: rgba(0,0,0,0.3);
+        position: absolute;
+        line-height: 3rem;
+        left: 2rem;
+        top: calc(1rem + 1px);
+    }
+
+    .wk-search-input:focus {
+        outline: none;
+        box-shadow: 0px .5rem 1rem 0px rgba(0, 0, 0, 0.1);
+    }
+
+    .wk-search .input-group-append {
+        position: absolute;
+        line-height: 3rem;
+        right: 1rem;
+        height: 3rem;
+    }
+
+    .wk-search .input-group-append button {
+        border: 1px solid transparent;
+        background: transparent;
+        font-weight: 400;
+        line-height: 2rem;
+        padding: .5 1rem;
+        border-radius: 2rem;
+        color: #007bff;
+    }
+
+    .wk-search-input:focus + .input-group-append button {
+        font-weight: 600;
+    }
+
+    .wk-search .input-group-append button:hover {
+        background: transparent;
+        border: 1px solid #ddd;
+        color: #007bff;
+    }
+
+/* DESCRIPTION COMPONENT*/
+    .wk-description {
+        width: 100%;
+        padding: .5rem 1.5rem;
+        max-width: 38rem;
+        margin: 1rem auto;
+        color: #666;
+        background: #f8f8f8;
+        border-radius: 1rem;
+    }
+
+/* TABLE COMPONENT*/
+.wk-table {
+    max-width: 60rem;
+    margin: 2rem auto;
 }
 
-.wk-navbar .first-level div {
-    display: inline-block;
+#main_body {
+    display: none;
 }
 
-.wk-navbar .first-level div.right {
-    float: right;
-}
+/* TOGGLES BEHAVIOUR*/
+    .wk-toggle-label {
+        padding: 8px 0;
+        width: 100%;
+        margin: 0;
+        line-height: 1.5rem;
+        font-weight: 600;
+    }
 
-a.link {
-    padding: 8px 12px;
-    border-radius: 4px;
-}
+    .wk-toggle-label::after {
+        font-family: 'Material Icons';
+        content: "expand_more";
+        -webkit-font-feature-settings: 'liga';
+        float: right;
+        font-size: 2rem;
+    }
 
-a.link.black {
-    color: #111;
-}
+    .wk-toggle-input:checked + .wk-toggle-label::after {
+        content: "expand_less";
+    }
 
-a.link:hover {
-    background-color: rgba(0, 0, 0, 0.1);
-    text-decoration: none;
-}
+    .wk-toggle-label:hover {
+        cursor: pointer;
+    }
+
+    .wk-toggle-input {
+        display: none;
+    }
+
+    .wk-toggle-input + .wk-toggle-label + .wk-toggle-content {
+        display: none;
+    }
+
+    .wk-toggle-input:checked + .wk-toggle-label + .wk-toggle-content {
+        display: block;
+    }
+
+/* LINKS AND BUTTONS STYLES */
+    a.link {
+        padding: 8px 12px;
+        border-radius: 4px;
+    }
+
+    a.link.black {
+        color: #111;
+    }
+
+    a.link:hover {
+        background-color: rgba(0, 0, 0, 0.1);
+        text-decoration: none;
+    }

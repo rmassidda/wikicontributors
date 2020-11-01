@@ -178,6 +178,7 @@ function notify_loading(title){
 }
 
 async function update_state(e){
+
   titles = document.getElementById("titles").value.split(",")
   titles = titles.filter(e => e!="") // Remove empty
   titles = titles.map(e => (e[0]==" ")?e.slice(1):e) // Remove starting space
@@ -204,8 +205,21 @@ async function update_state(e){
   }
 }
 
+function switchDescription() {
+  var toggleDesc = document.getElementById("toggle-description");
+   if (toggleDesc.checked) {
+    toggleDesc.checked = false;
+  }
+}
+
+function showTable() {
+  document.getElementById("main_body").style.display = "block";
+}
+
 // Event listeners
 document.getElementById("launch").addEventListener("click", update_state)
+document.getElementById("launch").addEventListener("click", switchDescription)
+document.getElementById("launch").addEventListener("click", showTable)
 document.getElementById("titles").addEventListener("keyup", function(event) {
   if (event.keyCode === 13) {
     event.preventDefault();
