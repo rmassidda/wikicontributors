@@ -101,14 +101,88 @@ html {
     }
 
 /* TABLE COMPONENT*/
-.wk-table {
-    max-width: 60rem;
-    margin: 2rem auto;
-}
+    .wk-table {
+        margin: 2rem auto;
+    }
 
-#main_body {
-    display: none;
-}
+    .table-responsive {
+        display: flex;
+        flex-direction: column;
+        width: auto;
+        overflow: visible;
+    }
+
+    .table {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        flex-basis: 50%;
+        margin: auto;
+    }
+
+    thead, tbody {
+        flex-grow: 1;
+        flex-basis: 20%;
+    }
+
+    thead {
+        position: sticky;
+        top: 0;
+        background: white;
+    }
+
+    .wk-row, thead tr {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: baseline;
+    }
+
+    .wk-row:hover {
+        background-color: #f8f8f8;
+    }
+
+    .wk-row th, thead tr th {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .wk-row th:hover::before {
+        content: attr(data-title);
+        background-color: #f8f8f8;
+        position: absolute;
+    }
+
+    thead tr th:hover::before {
+        content: attr(data-title);
+        background-color: white;
+        padding-right: 8px;
+        position: absolute;
+    }
+
+    .wk-row td {
+        text-align: right;
+    }
+
+    .wk-row *, thead tr th {
+        flex-basis: 10%;
+        flex-shrink: 1;
+    }
+
+    thead tr th {
+        text-align: right;
+        border-top: 0!important;
+    }
+
+    thead tr th:first-of-type {
+        text-align: left;
+    }
+
+    #main_body {
+        display: none;
+    }
 
 /* TOGGLES BEHAVIOUR*/
     .wk-toggle-label {

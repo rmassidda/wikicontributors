@@ -94,6 +94,7 @@ function update_view(titles){
     var node = document.createElement("th")
     var txt  = document.createTextNode(k)
     node.appendChild(txt)
+    node.dataset.title = k
     node["scope"] = "col"
     thead.appendChild(node)
   }
@@ -139,11 +140,13 @@ function update_view(titles){
   for (i in users){
     let u = users[i]
     // Row
-    row = document.createElement("tr")  
+    row = document.createElement("tr")
+    row.className = "wk-row";  
 
     // Username
     th = document.createElement("th")
     th["scope"] = "row"
+    th.dataset.title = u;
     th.appendChild(document.createTextNode(u))
     row.appendChild(th)
 
