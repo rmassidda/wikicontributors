@@ -219,10 +219,19 @@ function showTable() {
   document.getElementById("main_body").style.display = "block";
 }
 
+function hideDescription() {
+  document.getElementById("description").style.display = "none";
+}
+
+function animateNavbar() {
+  document.getElementById("navbar").classList.add("small");
+}
+
 // Event listeners
 document.getElementById("launch").addEventListener("click", update_state)
-document.getElementById("launch").addEventListener("click", switchDescription)
+document.getElementById("launch").addEventListener("click", hideDescription)
 document.getElementById("launch").addEventListener("click", showTable)
+document.getElementById("launch").addEventListener("click", animateNavbar)
 document.getElementById("titles").addEventListener("keyup", function(event) {
   if (event.keyCode === 13) {
     event.preventDefault();

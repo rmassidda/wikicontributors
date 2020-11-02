@@ -14,30 +14,20 @@
   </head>
   <body>
 
-    <nav class="wk-navbar">
-      <div class="first-level">
-        <div class="left"></div>
-        <div class="center"></div>
-        <div class="right">
-          <a class="link" target="_blank" href="https://www.paypal.com/paypalme/RiccardoMassidda">Dona</a>
-          <a class="link" target="_blank" href="https://twitter.com/intent/tweet">Tweetta</a>
-          <a class="link black" target="_blank" href="https://github.com/rmassidda/wikicontributors">Fork me on Github</a>
+    <nav class="wk-navbar" id="navbar">
+      <div class="wk-logo">
+        <div>WikiContributors</div>
+      </div>
+
+      <div class="wk-search input-group">
+        <input class="wk-search-input" placeholder="Roma, Roma (città antica), Associazione Sportiva Roma..." type="text" class="form-control" aria-label="Text input with dropdown button" id="titles">
+        <div class="input-group-append">
+          <button class="" id="launch" type="button">Cerca</button>
         </div>
       </div>
     </nav>
 
-    <div class="wk-logo">
-      <h2>WikiContributors</h2>
-    </div>
-
-    <div class="wk-search input-group">
-      <input class="wk-search-input" placeholder="Roma, Roma (città antica), Associazione Sportiva Roma..." type="text" class="form-control" aria-label="Text input with dropdown button" id="titles">
-      <div class="input-group-append">
-        <button class="" id="launch" type="button">Cerca</button>
-      </div>
-    </div>
-
-    <div class="wk-description">
+    <div class="wk-description" id="description">
       <input id="toggle-description" class="wk-toggle-input" type="checkbox" checked>
       <label for="toggle-description" class="wk-toggle-label">Breve guida</label>
       <div class="wk-toggle-content">
@@ -57,6 +47,14 @@
             <tbody id="table_body">
             </tbody>
           </table>
+      </div>
+    </div>
+
+    <div class="wk-footer">
+      <div class="center">
+        <a class="link black" target="_blank" href="https://www.paypal.com/paypalme/RiccardoMassidda">Dona</a>
+        <a class="link black" target="_blank" href="https://twitter.com/intent/tweet">Tweetta</a>
+        <a class="link black" target="_blank" href="https://github.com/rmassidda/wikicontributors">Forka su Github</a>
       </div>
     </div>
 
